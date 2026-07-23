@@ -1,7 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://2k0vx4uihyxw"]
+[gd_scene load_steps=4 format=3 uid="uid://2k0vx4uihyxw"]
 
 [ext_resource type="PackedScene" uid="uid://2tigku23stpw" path="res://entities/background/background.tscn" id="1_dji8l"]
+[ext_resource type="Script" uid="uid://cnt03pvax1hp" path="res://entities/battlefield/battlefield.gd" id="1_yrw75"]
+[ext_resource type="PackedScene" uid="uid://bceyhx4qm6sau" path="res://entities/ui/count_down/count_down.tscn" id="3_gt0yh"]
 
 [node name="Battlefield" type="Node2D"]
+script = ExtResource("1_yrw75")
 
 [node name="Background" parent="." instance=ExtResource("1_dji8l")]
+
+[node name="CountDownLabel" parent="." instance=ExtResource("3_gt0yh")]
+offset_left = -2.0
+offset_top = 603.0
+offset_right = -2.0
+offset_bottom = 603.0
+
+[node name="CountDownTimer" type="Timer" parent="."]
+wait_time = 60.0
+one_shot = true
+autostart = true

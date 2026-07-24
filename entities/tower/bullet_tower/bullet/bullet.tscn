@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://kpillceaswhm"]
+[gd_scene load_steps=5 format=3 uid="uid://kpillceaswhm"]
 
 [ext_resource type="Script" uid="uid://df1j67amu2uce" path="res://entities/tower/bullet_tower/bullet/bullet.gd" id="1_blpv1"]
 [ext_resource type="Texture2D" uid="uid://ccmtdco5v8b7u" path="res://assets/art/colorgrid.png" id="2_0rh7v"]
+[ext_resource type="PackedScene" uid="uid://uhay06i1t3kb" path="res://entities/utilities/despawning/despawn.tscn" id="3_0rh7v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rfguu"]
 size = Vector2(64, 64)
@@ -18,3 +19,6 @@ region_rect = Rect2(64, 192, 64, 64)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_rfguu")
+
+[node name="Despawn" parent="." instance=ExtResource("3_0rh7v")]
+despawn_down = true

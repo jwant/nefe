@@ -1,13 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://2k0vx4uihyxw"]
+[gd_scene load_steps=6 format=3 uid="uid://2k0vx4uihyxw"]
 
 [ext_resource type="PackedScene" uid="uid://2tigku23stpw" path="res://entities/background/background.tscn" id="1_dji8l"]
 [ext_resource type="Script" uid="uid://cnt03pvax1hp" path="res://entities/battlefield/battlefield.gd" id="1_yrw75"]
 [ext_resource type="PackedScene" uid="uid://bceyhx4qm6sau" path="res://entities/ui/count_down/count_down.tscn" id="3_gt0yh"]
 [ext_resource type="PackedScene" uid="uid://dflwfnr23bp58" path="res://entities/ship/ship.tscn" id="5_030w6"]
-[ext_resource type="PackedScene" uid="uid://cneo82uvk7quq" path="res://entities/tower/bullet_tower/bullet_tower.tscn" id="5_ssfyx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gt0yh"]
-size = Vector2(1080, 200)
+size = Vector2(1000, 200)
 
 [node name="Battlefield" type="Node2D"]
 script = ExtResource("1_yrw75")
@@ -24,31 +23,6 @@ offset_bottom = 603.0
 [node name="CountDownTimer" type="Timer" parent="."]
 wait_time = 60.0
 autostart = true
-
-[node name="BulletTower" parent="." instance=ExtResource("5_ssfyx")]
-position = Vector2(300, 70)
-scale = Vector2(0.75, 0.75)
-starting_cooldown = 3
-
-[node name="BulletTower2" parent="." instance=ExtResource("5_ssfyx")]
-position = Vector2(520, 70)
-scale = Vector2(0.75, 0.75)
-starting_cooldown = 1
-
-[node name="BulletTower3" parent="." instance=ExtResource("5_ssfyx")]
-position = Vector2(740, 70)
-scale = Vector2(0.75, 0.75)
-starting_cooldown = 4
-
-[node name="BulletTower4" parent="." instance=ExtResource("5_ssfyx")]
-position = Vector2(960, 70)
-scale = Vector2(0.75, 0.75)
-starting_cooldown = 5
-
-[node name="BulletTower5" parent="." instance=ExtResource("5_ssfyx")]
-position = Vector2(1180, 70)
-scale = Vector2(0.75, 0.75)
-starting_cooldown = 5
 
 [node name="SpawnArea" type="Area2D" parent="."]
 

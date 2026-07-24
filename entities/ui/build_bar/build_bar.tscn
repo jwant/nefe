@@ -33,4 +33,5 @@ vertical_alignment = 1
 
 [node name="BulletTower" parent="." instance=ExtResource("4_tk8a3")]
 position = Vector2(131, 151)
+starting_cooldown = 3
 constructor = true

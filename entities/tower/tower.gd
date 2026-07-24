@@ -11,16 +11,17 @@ func _ready():
 	if constructor:
 		cooldown_label.text = str(cost)
 	else:
-		print(self)
 		GameManager.second_tick.connect(self._on_second_tick)
 		cooldown_label.text = str(cooldown)
 
 func _on_second_tick():
 	cooldown -= 1
+	print(starting_cooldown)
 	if cooldown > 0:
 		cooldown_label.text = str(cooldown)
 	if cooldown == 0:
 		cooldown_label.text = "*"
+		print("CSD")
 		_activate()
 	if cooldown < 0:
 		cooldown = starting_cooldown
@@ -36,6 +37,8 @@ func on_grid_placed(grid: DraggableGrid):
 			var tower = load(self.scene_file_path)
 			var new_tower = tower.instantiate()
 			new_tower.global_position = grid.global_position
+			new_tower.starting_cooldown = starting_cooldown
+			new_tower.cost = cost
 			grid.get_parent().add_child(new_tower)
 	else:
 		global_position = grid.global_position

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cneo82uvk7quq"]
 
 [ext_resource type="Script" uid="uid://cx57xfuka2803" path="res://entities/tower/bullet_tower/bullet_tower.gd" id="1_nvq5p"]
-[ext_resource type="Texture2D" uid="uid://ccmtdco5v8b7u" path="res://assets/art/colorgrid.png" id="2_sgdwx"]
+[ext_resource type="Texture2D" uid="uid://cqdupgm35y8mw" path="res://entities/tower/art/tower_spritesheet.png" id="2_ltll8"]
 [ext_resource type="PackedScene" uid="uid://bca678i07q5q2" path="res://entities/utilities/draggable/draggable.tscn" id="3_ltll8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ltll8"]
@@ -14,10 +14,10 @@ metadata/_custom_type_script = "uid://0ob3q2456fgf"
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
-texture_filter = 1
-texture = ExtResource("2_sgdwx")
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("2_ltll8")
 region_enabled = true
-region_rect = Rect2(64, 0, 64, 64)
+region_rect = Rect2(0, 0, 512, 512)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_ltll8")

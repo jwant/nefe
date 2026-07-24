@@ -8,6 +8,7 @@
 size = Vector2(64, 64)
 
 [node name="BulletTower" type="Node2D"]
+z_index = 100
 script = ExtResource("1_nvq5p")
 metadata/_custom_type_script = "uid://0ob3q2456fgf"
 

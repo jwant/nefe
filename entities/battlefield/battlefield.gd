@@ -1,12 +1,27 @@
 extends Node2D
 
+const GRID = preload("res://entities/utilities/draggable/grid/draggable_grid.tscn")
+
 func _ready():
 	_setup_timer()
 	_setup_spawn_area()
+	_setup_grid()
 
 func _process(delta):
 	_process_timer()
 	_process_spawn_area(delta)
+
+### GRID ###
+var GRID_ROW_CONFIG = [{ 'n':13, 'p':Vector2(270,35),'g':78 }, { 'n':12, 'p':Vector2(312,110),'g':78 }]
+
+func _setup_grid():
+	for i in GRID_ROW_CONFIG:
+		var current_pos = i.p
+		for g in range(i.n):
+			var grid = GRID.instantiate()
+			grid.global_position = current_pos
+			add_child(grid)
+			current_pos.x += i.g
 
 ### TIMER ###
 @onready var count_down_label: Control = $CountDownLabel/CountDownLabel

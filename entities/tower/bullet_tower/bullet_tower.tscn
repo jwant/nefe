@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cneo82uvk7quq"]
+[gd_scene load_steps=5 format=3 uid="uid://cneo82uvk7quq"]
 
 [ext_resource type="Script" uid="uid://cx57xfuka2803" path="res://entities/tower/bullet_tower/bullet_tower.gd" id="1_nvq5p"]
 [ext_resource type="Texture2D" uid="uid://ccmtdco5v8b7u" path="res://assets/art/colorgrid.png" id="2_sgdwx"]
+[ext_resource type="PackedScene" uid="uid://bca678i07q5q2" path="res://entities/utilities/draggable/draggable.tscn" id="3_ltll8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ltll8"]
 size = Vector2(64, 64)
@@ -36,3 +37,5 @@ offset_right = 32.0
 offset_bottom = 10.0
 text = "1"
 horizontal_alignment = 1
+
+[node name="Draggable" parent="." instance=ExtResource("3_ltll8")]

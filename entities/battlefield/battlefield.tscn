@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://2k0vx4uihyxw"]
+[gd_scene load_steps=8 format=3 uid="uid://2k0vx4uihyxw"]
 
 [ext_resource type="PackedScene" uid="uid://2tigku23stpw" path="res://entities/background/background.tscn" id="1_dji8l"]
 [ext_resource type="Script" uid="uid://cnt03pvax1hp" path="res://entities/battlefield/battlefield.gd" id="1_yrw75"]
 [ext_resource type="PackedScene" uid="uid://bceyhx4qm6sau" path="res://entities/ui/count_down/count_down.tscn" id="3_gt0yh"]
 [ext_resource type="PackedScene" uid="uid://dflwfnr23bp58" path="res://entities/ship/ship.tscn" id="5_030w6"]
 [ext_resource type="PackedScene" uid="uid://cneo82uvk7quq" path="res://entities/tower/bullet_tower/bullet_tower.tscn" id="5_ssfyx"]
+[ext_resource type="PackedScene" uid="uid://cf6ry3tspvag4" path="res://entities/tower/tower.tscn" id="6_030w6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gt0yh"]
 size = Vector2(1080, 200)
@@ -58,3 +59,6 @@ shape = SubResource("RectangleShape2D_gt0yh")
 
 [node name="Ship" parent="." instance=ExtResource("5_030w6")]
 position = Vector2(640, 54)
+
+[node name="BaseTower" parent="." instance=ExtResource("6_030w6")]
+position = Vector2(313, 419)

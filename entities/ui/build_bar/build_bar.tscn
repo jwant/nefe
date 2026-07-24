@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://c8hbmoj4a1kxu"]
+
+[ext_resource type="Texture2D" uid="uid://brvdk1onrlqdo" path="res://entities/background/art/menus.png" id="1_atrgh"]
+[ext_resource type="Script" uid="uid://58h26haju6iu" path="res://entities/ui/build_bar/build_bar.gd" id="1_bbda2"]
+[ext_resource type="FontFile" uid="uid://cxm4p1gqqm4ax" path="res://assets/fonts/PickysideRegular-vn7w4.otf" id="2_bbda2"]
+[ext_resource type="PackedScene" uid="uid://cneo82uvk7quq" path="res://entities/tower/bullet_tower/bullet_tower.tscn" id="4_tk8a3"]
+
+[node name="BuildBar" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_bbda2")
+
+[node name="ResourceBar" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(130, 277)
+scale = Vector2(1, 0.5)
+texture = ExtResource("1_atrgh")
+region_enabled = true
+region_rect = Rect2(200, 0, 70, 720)
+
+[node name="Energy" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 95.0
+offset_top = 457.0
+offset_right = 165.0
+offset_bottom = 512.0
+theme_override_fonts/font = ExtResource("2_bbda2")
+theme_override_font_sizes/font_size = 37
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BulletTower" parent="." instance=ExtResource("4_tk8a3")]
+position = Vector2(131, 151)
+constructor = true

@@ -41,6 +41,7 @@ refresh={
 [layer_names]
 
 2d_physics/layer_5="enemy"
+2d_physics/layer_6="draggable"
 
 [rendering]
 

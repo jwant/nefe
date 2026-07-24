@@ -21,5 +21,4 @@ func _process(_delta):
 
 	if despawn_down:
 		if global_position.y > screensize.y:
-			print("HI")
 			queue_free()

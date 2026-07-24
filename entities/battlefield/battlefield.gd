@@ -13,7 +13,10 @@ func _process(delta):
 @onready var count_down_timer: Timer = $CountDownTimer
 var previous_time: int
 func _setup_timer():
-		previous_time = int( count_down_timer.time_left )
+	previous_time = int( count_down_timer.time_left )
+	count_down_timer.connect("timeout", func(): 
+		previous_time = int( count_down_timer.wait_time )
+	)
 
 func _process_timer():
 	count_down_label.text = "%04.1f" % count_down_timer.time_left

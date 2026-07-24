@@ -1,7 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://6a3bhqnmk13p"]
+[gd_scene load_steps=6 format=3 uid="uid://6a3bhqnmk13p"]
 
 [ext_resource type="Script" uid="uid://ba2fxrvxbuj6a" path="res://entities/enemy/enemy.gd" id="1_im2q6"]
 [ext_resource type="Texture2D" uid="uid://ccmtdco5v8b7u" path="res://assets/art/colorgrid.png" id="2_3fvr7"]
+[ext_resource type="Shader" uid="uid://c5mt3qusdmula" path="res://entities/enemy/blink.gdshader" id="2_dt443"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4wwj3"]
+resource_local_to_scene = true
+shader = ExtResource("2_dt443")
+shader_parameter/blink_color = Color(1, 1, 1, 1)
+shader_parameter/blink_intensity = 0.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_im2q6"]
 size = Vector2(64, 64)
@@ -12,9 +19,11 @@ collision_mask = 0
 script = ExtResource("1_im2q6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_4wwj3")
 texture = ExtResource("2_3fvr7")
 region_enabled = true
 region_rect = Rect2(196, 0, 64, 64)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("RectangleShape2D_im2q6")

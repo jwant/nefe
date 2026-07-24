@@ -51,6 +51,7 @@ func _process_spawn_area(delta):
 	if spawn_tracker > SPAWN_TRIGGER:
 		spawn_tracker = 0
 		var enemy = ENEMEY.instantiate()
+		enemy.scale = Vector2(.5,.5)
 		enemy.position = Vector2(randi_range(x_range[0], x_range[1]), randi_range(y_range[0], y_range[1]))
 		get_parent().add_child(enemy)
 	

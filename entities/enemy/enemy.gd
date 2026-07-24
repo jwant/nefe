@@ -1,7 +1,7 @@
 extends Area2D
 class_name Enemy
 
-@export var speed: int = 100
+@export var speed: int = 50
 @export var health: int = 100
 @onready var sprite: Sprite2D = $Sprite2D
 

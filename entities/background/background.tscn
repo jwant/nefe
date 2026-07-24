@@ -19,3 +19,11 @@ position = Vector2(100, 360)
 texture = ExtResource("2_ev6lv")
 region_enabled = true
 region_rect = Rect2(0, 0, 200, 720)
+
+[node name="ResourceBar" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(130, 277)
+scale = Vector2(1, 0.5)
+texture = ExtResource("2_ev6lv")
+region_enabled = true
+region_rect = Rect2(200, 0, 70, 720)

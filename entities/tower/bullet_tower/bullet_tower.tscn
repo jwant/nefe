@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://cneo82uvk7quq"]
+
+[ext_resource type="Script" uid="uid://cx57xfuka2803" path="res://entities/tower/bullet_tower/bullet_tower.gd" id="1_nvq5p"]
+[ext_resource type="Texture2D" uid="uid://ccmtdco5v8b7u" path="res://assets/art/colorgrid.png" id="2_sgdwx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ltll8"]
+size = Vector2(64, 64)
+
+[node name="BulletTower" type="Node2D"]
+script = ExtResource("1_nvq5p")
+metadata/_custom_type_script = "uid://0ob3q2456fgf"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+texture_filter = 1
+texture = ExtResource("2_sgdwx")
+region_enabled = true
+region_rect = Rect2(64, 0, 64, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_ltll8")
+
+[node name="Stats" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CoolDown" type="Label" parent="Stats"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -32.0
+offset_top = -54.0
+offset_right = 32.0
+offset_bottom = 10.0
+text = "1"
+horizontal_alignment = 1

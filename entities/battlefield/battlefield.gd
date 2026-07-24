@@ -7,7 +7,6 @@ var previous_time: int
 
 func _ready():
 	previous_time = int( count_down_timer.time_left )
-	print(previous_time)
 
 func _process(_delta):
 	count_down_label.text = "%04.1f" % count_down_timer.time_left

@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cvucycgsbsvuq"]
+
+[ext_resource type="Texture2D" uid="uid://ccmtdco5v8b7u" path="res://assets/art/colorgrid.png" id="1_apw7y"]
+[ext_resource type="Script" uid="uid://b5dxj344cj8sm" path="res://entities/energy_pellet/energy_pellet.gd" id="1_iawmx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iawmx"]
+size = Vector2(64, 64)
+
+[node name="EnergyPellet" type="Area2D" groups=["battlefield_resources"]]
+script = ExtResource("1_iawmx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_apw7y")
+region_enabled = true
+region_rect = Rect2(192, 64, 64, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.25, 0.25)
+shape = SubResource("RectangleShape2D_iawmx")

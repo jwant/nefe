@@ -1,8 +1,11 @@
 extends Area2D
 class_name Enemy
 
+const ENERGY = preload("res://entities/energy_pellet/energy_pellet.tscn")
+
 @export var speed: int = 50
 @export var health: int = 100
+@export var holding_energy: int = 1
 @onready var sprite: Sprite2D = $Sprite2D
 
 func _process(delta):
@@ -39,7 +42,14 @@ func hit(damage: int):
 	tween.tween_method(SetShader_BlinkIntensity, .9, 0.0, 0.5)
 	health -= damage
 	if health <= 0:
+		_drop_energy()
 		queue_free()
 
 func SetShader_BlinkIntensity(newValue: float):
 	sprite.material.set_shader_parameter("blink_intensity", newValue)
+
+func _drop_energy():
+	for i in range(holding_energy):
+		var energy = ENERGY.instantiate()
+		energy.position = position
+		get_parent().add_child(energy)

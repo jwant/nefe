@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://2tigku23stpw"]
+[gd_scene load_steps=6 format=3 uid="uid://2tigku23stpw"]
 
 [ext_resource type="Texture2D" uid="uid://ccmtdco5v8b7u" path="res://assets/art/colorgrid.png" id="1_cnocy"]
 [ext_resource type="Texture2D" uid="uid://brvdk1onrlqdo" path="res://entities/background/art/menus.png" id="2_ev6lv"]
 [ext_resource type="PackedScene" uid="uid://c8hbmoj4a1kxu" path="res://entities/ui/build_bar/build_bar.tscn" id="3_bp52m"]
 [ext_resource type="PackedScene" uid="uid://b2t7xum5cp4y" path="res://entities/ui/ship_status/ship_status.tscn" id="4_8l5gi"]
+[ext_resource type="PackedScene" uid="uid://dtncc3xoorjg2" path="res://entities/ui/rewind/control.tscn" id="5_1035e"]
 
 [node name="Background" type="Node2D"]
 
@@ -30,3 +31,9 @@ offset_left = 12.0
 offset_top = 14.0
 offset_right = 12.0
 offset_bottom = 14.0
+
+[node name="Rewind" parent="." instance=ExtResource("5_1035e")]
+offset_left = 24.0
+offset_top = 522.0
+offset_right = 24.0
+offset_bottom = 522.0

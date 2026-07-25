@@ -54,9 +54,9 @@ func _process_timer():
 	int(spawn_area_shape.position.y + spawn_area_shape.shape.extents.y)
 ]
 
-const ENEMEY = preload("res://entities/enemy/enemy.tscn")
+const SKULL = preload("res://entities/enemy/skull/skull.tscn")
 const SPAWN_TRIGGER = 10
-@export var spawn_rate: int = 100
+@export var spawn_rate: int = 10
 var spawn_tracker: float
 
 func _setup_spawn_area():
@@ -68,7 +68,7 @@ func _process_spawn_area(delta):
 	spawn_tracker += spawn_rate * delta
 	if spawn_tracker > SPAWN_TRIGGER:
 		spawn_tracker = 0
-		var enemy = ENEMEY.instantiate()
+		var enemy = SKULL.instantiate()
 		enemy.scale = Vector2(.5,.5)
 		enemy.position = Vector2(randi_range(x_range[0], x_range[1]), randi_range(y_range[0], y_range[1]))
 		get_parent().add_child(enemy)

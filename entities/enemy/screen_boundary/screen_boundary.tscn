@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1rvf7h8wbofj"]
+
+[ext_resource type="Script" uid="uid://bjbcwlxfp5cus" path="res://entities/enemy/screen_boundary/screen_boundary.gd" id="1_dvgrt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qmulr"]
+size = Vector2(20, 1000)
+
+[node name="ScreenBoundary" type="Area2D"]
+collision_layer = 32
+collision_mask = 0
+monitoring = false
+script = ExtResource("1_dvgrt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_qmulr")

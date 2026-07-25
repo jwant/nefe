@@ -38,10 +38,10 @@ func _process_knockback(delta):
 		knockback = false
 
 #s DAMAGE ##
-func hit(damage: int):
+func hit(hit_damage: int):
 	var tween = get_tree().create_tween()
 	tween.tween_method(SetShader_BlinkIntensity, .9, 0.0, 0.5)
-	health -= damage
+	health -= hit_damage
 	if health <= 0:
 		call_deferred("_die")
 

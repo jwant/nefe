@@ -1,17 +1,18 @@
-[gd_scene load_steps=7 format=3 uid="uid://2k0vx4uihyxw"]
+[gd_scene load_steps=8 format=3 uid="uid://2k0vx4uihyxw"]
 
 [ext_resource type="PackedScene" uid="uid://2tigku23stpw" path="res://entities/background/background.tscn" id="1_dji8l"]
 [ext_resource type="Script" uid="uid://cnt03pvax1hp" path="res://entities/battlefield/battlefield.gd" id="1_yrw75"]
 [ext_resource type="PackedScene" uid="uid://bceyhx4qm6sau" path="res://entities/ui/count_down/count_down.tscn" id="3_gt0yh"]
 [ext_resource type="PackedScene" uid="uid://dflwfnr23bp58" path="res://entities/ship/ship.tscn" id="5_030w6"]
 [ext_resource type="PackedScene" uid="uid://cvk3p8uu4rpd7" path="res://entities/utilities/pausing/pausing.tscn" id="6_030w6"]
+[ext_resource type="PackedScene" uid="uid://d1rvf7h8wbofj" path="res://entities/enemy/screen_boundary/screen_boundary.tscn" id="6_tou7r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gt0yh"]
 size = Vector2(1000, 200)
 
 [node name="Battlefield" type="Node2D"]
 script = ExtResource("1_yrw75")
-spawn_rate = 10
+spawn_rate = 100
 
 [node name="Background" parent="." instance=ExtResource("1_dji8l")]
 
@@ -35,3 +36,9 @@ shape = SubResource("RectangleShape2D_gt0yh")
 position = Vector2(640, 54)
 
 [node name="Pausing" parent="." instance=ExtResource("6_030w6")]
+
+[node name="ScreenBoundary" parent="." instance=ExtResource("6_tou7r")]
+position = Vector2(190, 500)
+
+[node name="ScreenBoundary2" parent="." instance=ExtResource("6_tou7r")]
+position = Vector2(1290, 500)

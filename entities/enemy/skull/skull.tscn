@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://dt8d6garqrpc"]
+
+[ext_resource type="Script" uid="uid://wj7iu87qi7pq" path="res://entities/enemy/skull/skull.gd" id="1_g15km"]
+[ext_resource type="Shader" uid="uid://c5mt3qusdmula" path="res://entities/enemy/blink.gdshader" id="1_j588i"]
+[ext_resource type="Texture2D" uid="uid://bqiw73ek3a03n" path="res://assets/art/monochrome-transparent_packed.png" id="3_j588i"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j588i"]
+resource_local_to_scene = true
+shader = ExtResource("1_j588i")
+shader_parameter/blink_color = Color(1, 1, 1, 1)
+shader_parameter/blink_intensity = 0.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j588i"]
+size = Vector2(40, 48)
+
+[node name="Skull" type="Area2D"]
+collision_layer = 16
+collision_mask = 32
+script = ExtResource("1_g15km")
+speed = 25
+health = 25
+metadata/_custom_type_script = "uid://ba2fxrvxbuj6a"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+material = SubResource("ShaderMaterial_j588i")
+scale = Vector2(4, 4)
+texture = ExtResource("3_j588i")
+region_enabled = true
+region_rect = Rect2(608, 176.271, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_j588i")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

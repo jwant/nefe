@@ -6,4 +6,5 @@ func _activate():
 	var beam = BEAM.instantiate()
 	beam.position = position
 	beam.position.y += 25
+	beam.direction = _random_projectile_direction()
 	get_parent().add_child(beam)

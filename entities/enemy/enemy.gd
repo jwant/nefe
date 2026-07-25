@@ -24,6 +24,7 @@ var knockback_speed = -50
 var resume_rate = 2
 var knockback: bool = false
 
+## knock back ##
 func knock_back():
 	knockback = true
 	knockback_progress = 0.0
@@ -37,7 +38,23 @@ func _process_knockback(delta):
 	if knockback_progress >= 1:
 		knockback = false
 
-#s DAMAGE ##
+# SLOWDOWN ##
+var slow_down_timer: SceneTreeTimer
+var original_speed = speed
+func slow(reduction: float, time: float):
+	if slow_down_timer:
+		slow_down_timer.set_time_left(slow_down_timer.get_time_left()+time)
+		return
+
+	slow_down_timer = get_tree().create_timer(time)
+	speed = speed * reduction
+	slow_down_timer.timeout.connect(func():
+		slow_down_timer = null
+		speed = original_speed
+	)
+	
+
+# DAMAGE ##
 func hit(hit_damage: int):
 	var tween = get_tree().create_tween()
 	tween.tween_method(SetShader_BlinkIntensity, .9, 0.0, 0.5)

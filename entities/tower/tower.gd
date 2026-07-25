@@ -41,3 +41,7 @@ func on_grid_placed(grid: DraggableGrid):
 	else:
 		global_position = grid.global_position
 		
+
+func _random_projectile_direction():
+	return Vector2.DOWN.rotated(randf_range(-PI/8, PI/8))
+	

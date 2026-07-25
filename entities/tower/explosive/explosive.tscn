@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://bypw0esagqipw"]
+
+[ext_resource type="Script" uid="uid://cueavy8hcd1wr" path="res://entities/tower/explosive/explosive.gd" id="1_yqpys"]
+[ext_resource type="Texture2D" uid="uid://cqdupgm35y8mw" path="res://entities/tower/art/tower_spritesheet.png" id="2_4ibsf"]
+[ext_resource type="PackedScene" uid="uid://bca678i07q5q2" path="res://entities/utilities/draggable/draggable.tscn" id="3_f0ila"]
+[ext_resource type="FontFile" uid="uid://cxm4p1gqqm4ax" path="res://assets/fonts/PickysideRegular-vn7w4.otf" id="4_qru5j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dr703"]
+size = Vector2(64, 64)
+
+[node name="Explosive" type="Node2D"]
+script = ExtResource("1_yqpys")
+starting_cooldown = 2
+cost = 50
+metadata/_custom_type_script = "uid://0ob3q2456fgf"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("2_4ibsf")
+region_enabled = true
+region_rect = Rect2(0, 1536, 512, 512)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_dr703")
+
+[node name="Draggable" parent="." instance=ExtResource("3_f0ila")]
+
+[node name="Stats" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CoolDown" type="Label" parent="Stats"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -10.0
+offset_top = -24.0
+offset_right = 56.0
+offset_bottom = 76.0
+scale = Vector2(0.3, 0.3)
+theme_override_fonts/font = ExtResource("4_qru5j")
+theme_override_font_sizes/font_size = 100
+text = "1"
+horizontal_alignment = 1

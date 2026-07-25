@@ -2,9 +2,10 @@ extends Area2D
 
 var speed: float = 200
 @export var damage: int = 50
+var direction = Vector2.DOWN
 
 func _process(delta):
-	position += Vector2(0, speed * delta)
+	position += direction * speed * delta
 
 func _on_area_entered(area:Area2D):
 	if area is Enemy:

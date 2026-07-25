@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c8hbmoj4a1kxu"]
+[gd_scene load_steps=8 format=3 uid="uid://c8hbmoj4a1kxu"]
 
 [ext_resource type="Texture2D" uid="uid://brvdk1onrlqdo" path="res://entities/background/art/menus.png" id="1_atrgh"]
 [ext_resource type="Script" uid="uid://58h26haju6iu" path="res://entities/ui/build_bar/build_bar.gd" id="1_bbda2"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cneo82uvk7quq" path="res://entities/tower/bullet_tower/bullet_tower.tscn" id="4_tk8a3"]
 [ext_resource type="PackedScene" uid="uid://ciq6cbceb0loe" path="res://entities/tower/energy_collector/energy_collector.tscn" id="5_wdiyj"]
 [ext_resource type="PackedScene" uid="uid://cchirwfx3f2p5" path="res://entities/tower/laser/laser.tscn" id="6_2qwre"]
+[ext_resource type="PackedScene" uid="uid://bypw0esagqipw" path="res://entities/tower/explosive/explosive.tscn" id="7_uxthp"]
 
 [node name="BuildBar" type="Control"]
 layout_mode = 3
@@ -46,4 +47,8 @@ constructor = true
 [node name="Laser" parent="." instance=ExtResource("6_2qwre")]
 position = Vector2(130, 422)
 starting_cooldown = 3
+constructor = true
+
+[node name="Explosive" parent="." instance=ExtResource("7_uxthp")]
+position = Vector2(130, 322)
 constructor = true

@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://wragtw3h2a0i"]
+
+[ext_resource type="Texture2D" uid="uid://ccmtdco5v8b7u" path="res://assets/art/colorgrid.png" id="1_mqxj8"]
+[ext_resource type="Script" uid="uid://ty0xc8e2x4md" path="res://entities/tower/energy_collector/collector_drone/collector_drone.gd" id="1_wsiab"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wsiab"]
+size = Vector2(32, 32)
+
+[node name="CollectorDrone" type="Area2D"]
+collision_layer = 0
+collision_mask = 255
+monitorable = false
+script = ExtResource("1_wsiab")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_mqxj8")
+region_enabled = true
+region_rect = Rect2(128, 64, 64, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_wsiab")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

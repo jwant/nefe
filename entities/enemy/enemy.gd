@@ -42,11 +42,14 @@ func hit(damage: int):
 	tween.tween_method(SetShader_BlinkIntensity, .9, 0.0, 0.5)
 	health -= damage
 	if health <= 0:
-		_drop_energy()
-		queue_free()
+		call_deferred("_die")
 
 func SetShader_BlinkIntensity(newValue: float):
 	sprite.material.set_shader_parameter("blink_intensity", newValue)
+
+func _die():
+		_drop_energy()
+		queue_free()
 
 func _drop_energy():
 	for i in range(holding_energy):

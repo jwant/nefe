@@ -16,12 +16,10 @@ func _ready():
 
 func _on_second_tick():
 	cooldown -= 1
-	print(starting_cooldown)
 	if cooldown > 0:
 		cooldown_label.text = str(cooldown)
 	if cooldown == 0:
 		cooldown_label.text = "*"
-		print("CSD")
 		_activate()
 	if cooldown < 0:
 		cooldown = starting_cooldown

@@ -40,6 +40,9 @@ refresh={
 
 [layer_names]
 
+2d_physics/layer_2="tower"
+2d_physics/layer_3="resource"
+2d_physics/layer_4="collector_tower"
 2d_physics/layer_5="enemy"
 2d_physics/layer_6="draggable"
 

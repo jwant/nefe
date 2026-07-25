@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://ciq6cbceb0loe"]
+
+[ext_resource type="Script" uid="uid://d06dtv0weq2kr" path="res://entities/tower/energy_collector/energy_collector.gd" id="1_7bcoe"]
+[ext_resource type="Texture2D" uid="uid://ccmtdco5v8b7u" path="res://assets/art/colorgrid.png" id="2_7bcoe"]
+[ext_resource type="PackedScene" uid="uid://bca678i07q5q2" path="res://entities/utilities/draggable/draggable.tscn" id="3_7bcoe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xdxt7"]
+size = Vector2(64, 64)
+
+[node name="EnergyCollector" type="Node2D"]
+script = ExtResource("1_7bcoe")
+starting_cooldown = 3
+metadata/_custom_type_script = "uid://0ob3q2456fgf"
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 12
+collision_mask = 0
+monitoring = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+texture = ExtResource("2_7bcoe")
+region_enabled = true
+region_rect = Rect2(64, 64, 64, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_xdxt7")
+
+[node name="Stats" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CoolDown" type="Label" parent="Stats"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -32.0
+offset_top = -54.0
+offset_right = 32.0
+offset_bottom = 10.0
+text = "1"
+horizontal_alignment = 1
+
+[node name="Draggable" parent="." instance=ExtResource("3_7bcoe")]

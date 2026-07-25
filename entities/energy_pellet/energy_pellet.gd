@@ -4,6 +4,7 @@ class_name EnergyPellet
 var velocity: Vector2
 var speed: int = 100
 var energy: int = 10
+var targeted: bool = false
 
 func _ready():
 	var tween = get_tree().create_tween()

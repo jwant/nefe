@@ -7,10 +7,11 @@ func _activate():
 	if resources.size() == 0:
 		cooldown = 1
 	else:
-		var drone = DRONE.instantiate()
-		var resource = resources.front()
-		drone.target = resource
+		var resource = resources[randi() % resources.size()]
+		resources.sort_custom(func(a, b): return a.position.distance_to(position) < b.position.distance_to(position))
 		resource.targeted = true
+		var drone = DRONE.instantiate()
+		drone.target = resource
 		drone.home = self
 		drone.global_position = global_position
 		get_parent().add_child(drone)

@@ -56,20 +56,23 @@ func _process_timer():
 
 const SKULL = preload("res://entities/enemy/skull/skull.tscn")
 const SPAWN_TRIGGER = 10
-@export var spawn_rate: int = 10
-var spawn_tracker: float
+@export var skull_spawn_starting_rate: float = 10
+@export var skull_spawn_multiplier: float = 1.25
+var skull_spawn_tracker: float
 
 func _setup_spawn_area():
-	spawn_tracker = 0
-	# pool enemies
-	pass
+	skull_spawn_tracker = 0
+	GameManager.second_tick.connect(_apply_spawn_multipliers)
 
 func _process_spawn_area(delta):
-	spawn_tracker += spawn_rate * delta
-	if spawn_tracker > SPAWN_TRIGGER:
-		spawn_tracker = 0
+	skull_spawn_tracker += skull_spawn_starting_rate * delta
+	if skull_spawn_tracker > SPAWN_TRIGGER:
+		skull_spawn_tracker = 0
 		var enemy = SKULL.instantiate()
 		enemy.scale = Vector2(.5,.5)
 		enemy.position = Vector2(randi_range(x_range[0], x_range[1]), randi_range(y_range[0], y_range[1]))
 		get_parent().add_child(enemy)
+
+func _apply_spawn_multipliers():
+	skull_spawn_tracker *= skull_spawn_multiplier
 	

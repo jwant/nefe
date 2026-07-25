@@ -17,8 +17,8 @@ size = Vector2(40, 48)
 collision_layer = 16
 collision_mask = 32
 script = ExtResource("1_g15km")
-speed = 25
-health = 25
+speed = 60
+health = 50
 metadata/_custom_type_script = "uid://ba2fxrvxbuj6a"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

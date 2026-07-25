@@ -5,7 +5,7 @@ var capacity: int = 1
 var holding: int = 0
 var energy: int = 0
 var home: Tower
-var speed: int = 300
+var speed: int = 400
 
 func _process(delta):
 	var direction = self.global_position.direction_to(target.global_position)

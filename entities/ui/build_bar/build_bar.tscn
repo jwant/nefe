@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://c8hbmoj4a1kxu"]
+[gd_scene load_steps=7 format=3 uid="uid://c8hbmoj4a1kxu"]
 
 [ext_resource type="Texture2D" uid="uid://brvdk1onrlqdo" path="res://entities/background/art/menus.png" id="1_atrgh"]
 [ext_resource type="Script" uid="uid://58h26haju6iu" path="res://entities/ui/build_bar/build_bar.gd" id="1_bbda2"]
 [ext_resource type="FontFile" uid="uid://cxm4p1gqqm4ax" path="res://assets/fonts/PickysideRegular-vn7w4.otf" id="2_bbda2"]
 [ext_resource type="PackedScene" uid="uid://cneo82uvk7quq" path="res://entities/tower/bullet_tower/bullet_tower.tscn" id="4_tk8a3"]
 [ext_resource type="PackedScene" uid="uid://ciq6cbceb0loe" path="res://entities/tower/energy_collector/energy_collector.tscn" id="5_wdiyj"]
+[ext_resource type="PackedScene" uid="uid://cchirwfx3f2p5" path="res://entities/tower/laser/laser.tscn" id="6_2qwre"]
 
 [node name="BuildBar" type="Control"]
 layout_mode = 3
@@ -40,4 +41,9 @@ constructor = true
 [node name="EnergyCollector" parent="." instance=ExtResource("5_wdiyj")]
 position = Vector2(130, 232)
 starting_cooldown = 1
+constructor = true
+
+[node name="Laser" parent="." instance=ExtResource("6_2qwre")]
+position = Vector2(130, 422)
+starting_cooldown = 3
 constructor = true

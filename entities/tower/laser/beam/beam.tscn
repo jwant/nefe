@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmfn2u4vo8ksl"]
+
+[ext_resource type="Script" uid="uid://q1ukem5b0oyt" path="res://entities/tower/laser/beam/beam.gd" id="1_aks6m"]
+[ext_resource type="Texture2D" uid="uid://ccmtdco5v8b7u" path="res://assets/art/colorgrid.png" id="1_pixed"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i80eg"]
+size = Vector2(24, 639)
+
+[node name="Beam" type="Area2D"]
+collision_layer = 0
+collision_mask = 16
+monitorable = false
+script = ExtResource("1_aks6m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 319)
+shape = SubResource("RectangleShape2D_i80eg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 320)
+scale = Vector2(0.25, 10)
+texture = ExtResource("1_pixed")
+region_enabled = true
+region_rect = Rect2(128, 0, 64, 64)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

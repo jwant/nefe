@@ -21,6 +21,7 @@ func _on_button_pressed():
 		playing = false
 		countdown.visible = false
 		Engine.time_scale = 1
+		GameManager.reset_game(GameManager.energy)
 	)
 
 func _process(_delta):

@@ -6,10 +6,12 @@ var holding: int = 0
 var energy: int = 0
 var home: Tower
 var speed: int = 400
+var rotation_speed: int = 10
 
 func _process(delta):
 	var direction = self.global_position.direction_to(target.global_position)
 	position += direction * speed * delta
+	rotation += rotation_speed * delta
 
 func _on_area_entered(area:Area2D):
 	if area == target:

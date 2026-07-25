@@ -27,8 +27,10 @@ func spend_energy(amount: int)->bool:
 	energy -= amount
 	return true
 
-func reset_game():
+func reset_game(stored_energy: int=0):
 	get_tree().reload_current_scene()
-	energy = STARTING_ENERGY
+	if stored_energy < STARTING_ENERGY:
+		stored_energy = STARTING_ENERGY
+	energy = stored_energy
 	ship_health = STARTING_HEALTH
 

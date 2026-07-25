@@ -1,11 +1,11 @@
 [gd_scene load_steps=5 format=3 uid="uid://kpillceaswhm"]
 
 [ext_resource type="Script" uid="uid://df1j67amu2uce" path="res://entities/tower/bullet_tower/bullet/bullet.gd" id="1_blpv1"]
-[ext_resource type="Texture2D" uid="uid://ccmtdco5v8b7u" path="res://assets/art/colorgrid.png" id="2_0rh7v"]
+[ext_resource type="Texture2D" uid="uid://cqdupgm35y8mw" path="res://entities/tower/art/tower_spritesheet.png" id="2_0rh7v"]
 [ext_resource type="PackedScene" uid="uid://uhay06i1t3kb" path="res://entities/utilities/despawning/despawn.tscn" id="3_0rh7v"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rfguu"]
-size = Vector2(64, 64)
+[sub_resource type="CircleShape2D" id="CircleShape2D_0rh7v"]
+radius = 43.0
 
 [node name="Bullet" type="Area2D"]
 collision_layer = 0
@@ -14,14 +14,14 @@ script = ExtResource("1_blpv1")
 damage = 25
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.167, 0.167)
 texture = ExtResource("2_0rh7v")
 region_enabled = true
-region_rect = Rect2(64, 192, 64, 64)
+region_rect = Rect2(512, 0, 256, 256)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(0.5, 0.5)
-shape = SubResource("RectangleShape2D_rfguu")
+shape = SubResource("CircleShape2D_0rh7v")
 
 [node name="Despawn" parent="." instance=ExtResource("3_0rh7v")]
 despawn_down = true

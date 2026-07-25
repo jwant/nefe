@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cf6ry3tspvag4"]
+[gd_scene load_steps=7 format=3 uid="uid://cf6ry3tspvag4"]
 
 [ext_resource type="Script" uid="uid://0ob3q2456fgf" path="res://entities/tower/tower.gd" id="1_e2b0r"]
 [ext_resource type="Texture2D" uid="uid://cqdupgm35y8mw" path="res://entities/tower/art/tower_spritesheet.png" id="2_jrw8m"]
-[ext_resource type="FontFile" uid="uid://cxm4p1gqqm4ax" path="res://assets/fonts/PickysideRegular-vn7w4.otf" id="3_ce32w"]
+[ext_resource type="PackedScene" uid="uid://c54426fqhgdpd" path="res://entities/tower/stats.tscn" id="3_ce32w"]
+[ext_resource type="FontFile" uid="uid://cf3kkww6ypyp" path="res://assets/fonts/Digital7Mono-Yz9J4.ttf" id="3_jrw8m"]
 [ext_resource type="PackedScene" uid="uid://bca678i07q5q2" path="res://entities/utilities/draggable/draggable.tscn" id="3_ru2d0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uvpmh"]
@@ -26,23 +27,50 @@ region_rect = Rect2(2047.81, 0, 512, 512)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_uvpmh")
 
-[node name="Stats" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="CoolDown" type="Label" parent="Stats"]
-texture_filter = 1
-layout_mode = 0
-offset_left = -10.0
-offset_top = -24.0
-offset_right = 56.0
-offset_bottom = 76.0
-scale = Vector2(0.3, 0.3)
-theme_override_fonts/font = ExtResource("3_ce32w")
-theme_override_font_sizes/font_size = 100
-text = "1"
-horizontal_alignment = 1
+[node name="Stats" parent="." instance=ExtResource("3_ce32w")]
 
 [node name="Draggable" parent="." instance=ExtResource("3_ru2d0")]
+
+[node name="CoolDownMenu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -80.0
+offset_top = -40.0
+offset_right = 81.0
+offset_bottom = 165.0
+
+[node name="1" type="Button" parent="CoolDownMenu"]
+z_index = 60
+layout_mode = 0
+offset_left = 23.0
+offset_top = 76.0
+offset_right = 167.0
+offset_bottom = 228.0
+scale = Vector2(0.25, 0.25)
+theme_override_fonts/font = ExtResource("3_jrw8m")
+theme_override_font_sizes/font_size = 141
+text = "1"
+
+[node name="2" type="Button" parent="CoolDownMenu"]
+z_index = 60
+layout_mode = 0
+offset_left = 62.0
+offset_top = 76.0
+offset_right = 206.0
+offset_bottom = 228.0
+scale = Vector2(0.25, 0.25)
+theme_override_fonts/font = ExtResource("3_jrw8m")
+theme_override_font_sizes/font_size = 141
+text = "2"
+
+[node name="3" type="Button" parent="CoolDownMenu"]
+z_index = 60
+layout_mode = 0
+offset_left = 100.0
+offset_top = 76.0
+offset_right = 244.0
+offset_bottom = 228.0
+scale = Vector2(0.25, 0.25)
+theme_override_fonts/font = ExtResource("3_jrw8m")
+theme_override_font_sizes/font_size = 141
+text = "3"

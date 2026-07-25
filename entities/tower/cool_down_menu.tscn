@@ -1,0 +1,57 @@
+[gd_scene load_steps=3 format=3 uid="uid://bcvb32saw8bsm"]
+
+[ext_resource type="FontFile" uid="uid://cf3kkww6ypyp" path="res://assets/fonts/Digital7Mono-Yz9J4.ttf" id="1_7lqrn"]
+[ext_resource type="Script" uid="uid://bbbye8admtdx8" path="res://entities/tower/cool_down_menu.gd" id="1_b4clh"]
+
+[node name="CoolDownMenu" type="Control"]
+visible = false
+z_index = 1000
+clip_contents = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = -150.0
+offset_top = -56.0
+offset_right = 147.0
+offset_bottom = 179.0
+script = ExtResource("1_b4clh")
+
+[node name="1" type="Button" parent="."]
+z_index = 60
+layout_mode = 0
+offset_left = 92.0
+offset_top = 76.0
+offset_right = 236.0
+offset_bottom = 228.0
+scale = Vector2(0.25, 0.25)
+mouse_filter = 1
+theme_override_fonts/font = ExtResource("1_7lqrn")
+theme_override_font_sizes/font_size = 141
+text = "1"
+
+[node name="2" type="Button" parent="."]
+z_index = 60
+layout_mode = 0
+offset_left = 132.0
+offset_top = 76.0
+offset_right = 276.0
+offset_bottom = 228.0
+scale = Vector2(0.25, 0.25)
+mouse_filter = 1
+theme_override_fonts/font = ExtResource("1_7lqrn")
+theme_override_font_sizes/font_size = 141
+text = "2"
+
+[node name="3" type="Button" parent="."]
+z_index = 60
+layout_mode = 0
+offset_left = 172.0
+offset_top = 76.0
+offset_right = 316.0
+offset_bottom = 228.0
+scale = Vector2(0.25, 0.25)
+mouse_filter = 1
+theme_override_fonts/font = ExtResource("1_7lqrn")
+theme_override_font_sizes/font_size = 141
+text = "3"
+
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

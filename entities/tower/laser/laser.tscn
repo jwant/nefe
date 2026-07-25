@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cchirwfx3f2p5"]
+[gd_scene load_steps=7 format=3 uid="uid://cchirwfx3f2p5"]
 
 [ext_resource type="Script" uid="uid://b3aicyn3mcsxf" path="res://entities/tower/laser/laser.gd" id="1_q4nq4"]
 [ext_resource type="Texture2D" uid="uid://cqdupgm35y8mw" path="res://entities/tower/art/tower_spritesheet.png" id="2_q4nq4"]
 [ext_resource type="PackedScene" uid="uid://bca678i07q5q2" path="res://entities/utilities/draggable/draggable.tscn" id="3_ngy56"]
-[ext_resource type="FontFile" uid="uid://cxm4p1gqqm4ax" path="res://assets/fonts/PickysideRegular-vn7w4.otf" id="4_7fqfl"]
+[ext_resource type="PackedScene" uid="uid://c54426fqhgdpd" path="res://entities/tower/stats.tscn" id="5_7fqfl"]
+[ext_resource type="PackedScene" uid="uid://bcvb32saw8bsm" path="res://entities/tower/cool_down_menu.tscn" id="5_ngy56"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_htvku"]
 size = Vector2(64, 64)
@@ -26,21 +27,6 @@ shape = SubResource("RectangleShape2D_htvku")
 
 [node name="Draggable" parent="." instance=ExtResource("3_ngy56")]
 
-[node name="Stats" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Stats" parent="." instance=ExtResource("5_7fqfl")]
 
-[node name="CoolDown" type="Label" parent="Stats"]
-texture_filter = 1
-layout_mode = 0
-offset_left = -10.0
-offset_top = -24.0
-offset_right = 56.0
-offset_bottom = 76.0
-scale = Vector2(0.3, 0.3)
-theme_override_fonts/font = ExtResource("4_7fqfl")
-theme_override_font_sizes/font_size = 100
-text = "1"
-horizontal_alignment = 1
+[node name="CoolDownMenu" parent="." instance=ExtResource("5_ngy56")]

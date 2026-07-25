@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://c54426fqhgdpd"]
+
+[ext_resource type="FontFile" uid="uid://cf3kkww6ypyp" path="res://assets/fonts/Digital7Mono-Yz9J4.ttf" id="1_h8bf0"]
+
+[node name="Stats" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CoolDown" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = -10.0
+offset_top = -23.0
+offset_right = 56.0
+offset_bottom = 80.0
+scale = Vector2(0.3, 0.3)
+theme_override_fonts/font = ExtResource("1_h8bf0")
+theme_override_font_sizes/font_size = 100
+text = "3"
+horizontal_alignment = 1

@@ -9,6 +9,7 @@ anchors_preset = 0
 script = ExtResource("1_opqyq")
 
 [node name="Button" type="Button" parent="."]
+layout_mode = 0
 offset_right = 8.0
 offset_bottom = 8.0
 text = "Rewind"

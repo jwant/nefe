@@ -11,7 +11,7 @@ const STARTING_ENERGY = 150
 const STARTING_HEALTH = 1000
 
 var energy = STARTING_ENERGY
-var ship_health = STARTING_ENERGY
+var ship_health = STARTING_HEALTH
 
 func _process(_delta):
 	if Input.is_action_just_pressed("refresh"):

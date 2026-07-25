@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://ciq6cbceb0loe"]
+[gd_scene load_steps=6 format=3 uid="uid://ciq6cbceb0loe"]
 
 [ext_resource type="Script" uid="uid://d06dtv0weq2kr" path="res://entities/tower/energy_collector/energy_collector.gd" id="1_7bcoe"]
-[ext_resource type="Texture2D" uid="uid://ccmtdco5v8b7u" path="res://assets/art/colorgrid.png" id="2_7bcoe"]
+[ext_resource type="Texture2D" uid="uid://cqdupgm35y8mw" path="res://entities/tower/art/tower_spritesheet.png" id="2_7bcoe"]
 [ext_resource type="PackedScene" uid="uid://bca678i07q5q2" path="res://entities/utilities/draggable/draggable.tscn" id="3_7bcoe"]
+[ext_resource type="FontFile" uid="uid://cxm4p1gqqm4ax" path="res://assets/fonts/PickysideRegular-vn7w4.otf" id="4_xdxt7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xdxt7"]
 size = Vector2(64, 64)
@@ -18,12 +19,15 @@ collision_mask = 0
 monitoring = false
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+scale = Vector2(0.125, 0.125)
 texture = ExtResource("2_7bcoe")
 region_enabled = true
-region_rect = Rect2(64, 64, 64, 64)
+region_rect = Rect2(0, 512, 512, 512)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_xdxt7")
+
+[node name="Draggable" parent="." instance=ExtResource("3_7bcoe")]
 
 [node name="Stats" type="Control" parent="."]
 layout_mode = 3
@@ -34,11 +38,12 @@ offset_bottom = 40.0
 [node name="CoolDown" type="Label" parent="Stats"]
 texture_filter = 1
 layout_mode = 0
-offset_left = -32.0
-offset_top = -54.0
-offset_right = 32.0
-offset_bottom = 10.0
+offset_left = -10.0
+offset_top = -24.0
+offset_right = 56.0
+offset_bottom = 76.0
+scale = Vector2(0.3, 0.3)
+theme_override_fonts/font = ExtResource("4_xdxt7")
+theme_override_font_sizes/font_size = 100
 text = "1"
 horizontal_alignment = 1
-
-[node name="Draggable" parent="." instance=ExtResource("3_7bcoe")]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cf6ry3tspvag4"]
+[gd_scene load_steps=6 format=3 uid="uid://cf6ry3tspvag4"]
 
 [ext_resource type="Script" uid="uid://0ob3q2456fgf" path="res://entities/tower/tower.gd" id="1_e2b0r"]
-[ext_resource type="Texture2D" uid="uid://ccmtdco5v8b7u" path="res://assets/art/colorgrid.png" id="2_uvpmh"]
+[ext_resource type="Texture2D" uid="uid://cqdupgm35y8mw" path="res://entities/tower/art/tower_spritesheet.png" id="2_jrw8m"]
+[ext_resource type="FontFile" uid="uid://cxm4p1gqqm4ax" path="res://assets/fonts/PickysideRegular-vn7w4.otf" id="3_ce32w"]
 [ext_resource type="PackedScene" uid="uid://bca678i07q5q2" path="res://entities/utilities/draggable/draggable.tscn" id="3_ru2d0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uvpmh"]
@@ -17,9 +18,10 @@ monitoring = false
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
 texture_filter = 1
-texture = ExtResource("2_uvpmh")
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("2_jrw8m")
 region_enabled = true
-region_rect = Rect2(64, 0, 64, 64)
+region_rect = Rect2(2047.81, 0, 512, 512)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_uvpmh")
@@ -33,10 +35,13 @@ offset_bottom = 40.0
 [node name="CoolDown" type="Label" parent="Stats"]
 texture_filter = 1
 layout_mode = 0
-offset_left = -32.0
-offset_top = -54.0
-offset_right = 32.0
-offset_bottom = 10.0
+offset_left = -10.0
+offset_top = -24.0
+offset_right = 56.0
+offset_bottom = 76.0
+scale = Vector2(0.3, 0.3)
+theme_override_fonts/font = ExtResource("3_ce32w")
+theme_override_font_sizes/font_size = 100
 text = "1"
 horizontal_alignment = 1
 

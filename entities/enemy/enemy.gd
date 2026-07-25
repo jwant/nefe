@@ -5,6 +5,7 @@ const ENERGY = preload("res://entities/energy_pellet/energy_pellet.tscn")
 
 @export var speed: int = 50
 @export var health: int = 100
+@export var damage: int = 50
 @export var holding_energy: int = 1
 @onready var sprite: Sprite2D = $Sprite2D
 

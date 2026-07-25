@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2t7xum5cp4y"]
+
+[ext_resource type="Script" uid="uid://ddpbdwv6rxm7q" path="res://entities/ui/ship_status/ship_status.gd" id="1_cfilj"]
+[ext_resource type="FontFile" uid="uid://cxm4p1gqqm4ax" path="res://assets/fonts/PickysideRegular-vn7w4.otf" id="1_f5gai"]
+
+[node name="ShipStatus" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_cfilj")
+
+[node name="Health" type="Label" parent="."]
+layout_mode = 0
+offset_right = 221.0
+offset_bottom = 100.0
+theme_override_fonts/font = ExtResource("1_f5gai")
+theme_override_font_sizes/font_size = 100
+text = "1000"
+horizontal_alignment = 1
+
+[node name="SHIP" type="Label" parent="."]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 70.0
+offset_right = 70.0
+offset_bottom = 121.0
+rotation = 4.71239
+theme_override_fonts/font = ExtResource("1_f5gai")
+theme_override_font_sizes/font_size = 50
+text = "Ship"

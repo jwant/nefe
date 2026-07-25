@@ -45,6 +45,7 @@ pause={
 
 [layer_names]
 
+2d_physics/layer_1="ship"
 2d_physics/layer_2="tower"
 2d_physics/layer_3="resource"
 2d_physics/layer_4="collector_tower"

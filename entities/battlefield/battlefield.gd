@@ -11,6 +11,8 @@ func _ready():
 func _process(delta):
 	_process_timer()
 	_process_spawn_area(delta)
+	if GameManager.ship_health <= 0:
+		get_tree().paused = true
 
 ### GRID ###
 var GRID_ROW_CONFIG = [{ 'n':13, 'p':Vector2(270,35),'g':78 }, { 'n':12, 'p':Vector2(312,110),'g':78 }]

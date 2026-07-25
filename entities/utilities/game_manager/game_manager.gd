@@ -13,6 +13,10 @@ const STARTING_HEALTH = 1000
 var energy = STARTING_ENERGY
 var ship_health = STARTING_HEALTH
 
+func _ready():
+	GameManager.enter_build.connect(func(): Engine.time_scale = .25)
+	GameManager.exit_build.connect(func(): Engine.time_scale = 1)
+
 func _process(_delta):
 	if Input.is_action_just_pressed("refresh"):
 		reset_game()

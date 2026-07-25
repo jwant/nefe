@@ -1,10 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bkrfmb0hlnpry"]
+[gd_scene load_steps=2 format=3 uid="uid://bkrfmb0hlnpry"]
 
 [ext_resource type="PackedScene" uid="uid://2k0vx4uihyxw" path="res://entities/battlefield/battlefield.tscn" id="1_72uuj"]
-[ext_resource type="PackedScene" uid="uid://h6pg0ycltumh" path="res://entities/utilities/game_manager/game_manager.tscn" id="3_sywfi"]
 
 [node name="NoEscapeFromEarth" type="Node2D"]
 
 [node name="Battlefield" parent="." instance=ExtResource("1_72uuj")]
-
-[node name="GameManager" parent="." instance=ExtResource("3_sywfi")]

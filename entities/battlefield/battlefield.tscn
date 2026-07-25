@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://cnt03pvax1hp" path="res://entities/battlefield/battlefield.gd" id="1_yrw75"]
 [ext_resource type="PackedScene" uid="uid://bceyhx4qm6sau" path="res://entities/ui/count_down/count_down.tscn" id="3_gt0yh"]
 [ext_resource type="PackedScene" uid="uid://dflwfnr23bp58" path="res://entities/ship/ship.tscn" id="5_030w6"]
-[ext_resource type="PackedScene" uid="uid://cvucycgsbsvuq" path="res://entities/energy_pellet/energy_pellet.tscn" id="5_ssfyx"]
+[ext_resource type="PackedScene" uid="uid://cvk3p8uu4rpd7" path="res://entities/utilities/pausing/pausing.tscn" id="6_030w6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gt0yh"]
 size = Vector2(1000, 200)
@@ -34,5 +34,4 @@ shape = SubResource("RectangleShape2D_gt0yh")
 [node name="Ship" parent="." instance=ExtResource("5_030w6")]
 position = Vector2(640, 54)
 
-[node name="EnergyPellet" parent="." instance=ExtResource("5_ssfyx")]
-position = Vector2(593, 458)
+[node name="Pausing" parent="." instance=ExtResource("6_030w6")]

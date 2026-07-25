@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://5thu0paashvj" path="res://entities/utilities/game_manager/game_manager.gd" id="1_cfa5n"]
 
 [node name="GameManager" type="Node2D"]
+process_mode = 3
 script = ExtResource("1_cfa5n")
 
 [node name="CountDown" type="Timer" parent="."]

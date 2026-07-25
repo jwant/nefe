@@ -6,6 +6,7 @@ func _ready():
 	_setup_timer()
 	_setup_spawn_area()
 	_setup_grid()
+	get_tree().paused = true
 
 func _process(delta):
 	_process_timer()

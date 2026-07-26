@@ -61,4 +61,4 @@ func on_grid_placed(grid: DraggableGrid):
 		cooldown_menu.visible = true
 		
 func _random_projectile_direction():
-	return Vector2.DOWN.rotated(randf_range(-PI/8, PI/8))
+	return Vector2.DOWN.rotated(randf_range(-PI/4, PI/4))

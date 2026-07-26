@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://uhay06i1t3kb" path="res://entities/utilities/despawning/despawn.tscn" id="3_0rh7v"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0rh7v"]
-radius = 43.0
+radius = 32.25
 
 [node name="Bullet" type="Area2D"]
 collision_layer = 0
@@ -14,7 +14,7 @@ script = ExtResource("1_blpv1")
 damage = 25
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.167, 0.167)
+scale = Vector2(0.125, 0.125)
 texture = ExtResource("2_0rh7v")
 region_enabled = true
 region_rect = Rect2(512, 0, 256, 256)

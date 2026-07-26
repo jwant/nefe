@@ -20,7 +20,20 @@ func _on_area_entered(area:Area2D):
 			energy += area.energy
 			target.queue_free()
 			holding += 1
-			target = home.find_child("Area2D" )
+			_find_target()
 		elif area.get_parent() is Tower:
 			GameManager.energy += energy
 			queue_free()
+
+func _find_target():
+	if holding >= capacity:
+		target = home.find_child("Area2D" )
+		return
+
+	var resources = get_tree().get_nodes_in_group("battlefield_resources").filter(func(resource): return not resource.targeted)
+	if resources.size() == 0:
+		target = home.find_child("Area2D" )
+	else:
+		var resource = resources[randi() % resources.size()]
+		resource.targeted = true
+		target = resource
